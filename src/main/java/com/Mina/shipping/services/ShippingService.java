@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class ShippingService {
@@ -19,8 +20,8 @@ public class ShippingService {
     @Autowired
     private ShippingRepository shipmentRepo;
 
-    public ResponseEntity<?> getShipmentDetails(int id) {
-        ShippingModel shipmentDetails = shipmentRepo.findById(id);
+    public ResponseEntity<?> getShipmentDetails(String id) {
+        Optional<ShippingModel> shipmentDetails = shipmentRepo.findById(id);
         return ResponseEntity.ok().body(shipmentDetails);
     }
 

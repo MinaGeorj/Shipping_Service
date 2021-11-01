@@ -16,7 +16,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.time.LocalDateTime;
 
 @RestController
-@EnableWebMvc
 @RequestMapping("/api")
 public class ShippingController {
 
@@ -32,7 +31,7 @@ public class ShippingController {
     }
 
     @GetMapping("/shipment/{id}")
-    public ResponseEntity<?> getShipmentDetails(@PathVariable int id) {
+    public ResponseEntity<?> getShipmentDetails(@PathVariable String id) {
         return shippingService.getShipmentDetails(id);
     }
 

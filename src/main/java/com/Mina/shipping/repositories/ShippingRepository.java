@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ShippingRepository extends MongoRepository<ShippingModel, Integer> {
+public interface ShippingRepository extends MongoRepository<ShippingModel, String> {
     List<ShippingModel> findAll();
-    ShippingModel findById(int id);
 }
 
