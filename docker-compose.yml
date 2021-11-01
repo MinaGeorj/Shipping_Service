@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api-database:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+  api:
+    image: maven:3.6.3-jdk-8
+    command: mvn spring-boot:run
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/usr/src/mymaven:rw
+    working_dir: /usr/src/mymaven
+    links:
+      - api-database
