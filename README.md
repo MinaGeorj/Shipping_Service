@@ -5,7 +5,8 @@ Installation is very simple:
 
 <p>Given Docker is installed on your machine, <br/>
 at the project root directory, enter the following command: <br/>
-- docker-compose up <br/> <br/>
+
+  docker-compose up <br/> <br/>
 
 and Voila! Images are being created and then cotainers will start.
 
